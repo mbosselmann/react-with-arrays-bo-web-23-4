@@ -39,6 +39,17 @@ export default function App() {
     <main className="app">
       <h1 className="app__title">Pokédex</h1>
       <ul className="app__pokemons">
+        {pokemons.map((pokemon) => (
+          <li key={pokemon.id}>
+            <PokemonCard
+              id={pokemon.id}
+              name={pokemon.name}
+              types={pokemon.types}
+              image={pokemon.image}
+            />
+          </li>
+        ))}
+        {/* alternative with explicit return:
         {pokemons.map((pokemon) => {
           return (
             <li key={pokemon.id}>
@@ -50,7 +61,7 @@ export default function App() {
               />
             </li>
           );
-        })}
+        })} */}
       </ul>
     </main>
   );
